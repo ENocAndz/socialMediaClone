@@ -1,0 +1,60 @@
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.navBar .leftBar{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.navBar .leftBar span{
+    font-weight: bold;
+    font-size: 20px;
+    color: darkgreen;
+}
+
+
+
+.navBar .leftBar .search{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding:5px
+}
+
+
+.navBar .leftBar .search input{
+    border: none;
+    width: 500px;
+}
+
+.navBar .rightBar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navBar .rightBar .userIcon{
+    display: flex;
+    align-items: center;
+}
+
+.navBar .rightBar .userIcon img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.navBar .rightBar .userIcon span{
+    
+}
