@@ -5,7 +5,9 @@
     padding: 10px 20px;
     height: 50px;
     border-bottom: 1px solid lightgray;
-
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 .navBar .leftBar{
@@ -47,6 +49,8 @@
 .navBar .rightBar .userIcon{
     display: flex;
     align-items: center;
+    gap: 10px;
+    font-weight: 500;
 }
 
 .navBar .rightBar .userIcon img{
@@ -54,7 +58,4 @@
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
-}
-.navBar .rightBar .userIcon span{
-    
 }

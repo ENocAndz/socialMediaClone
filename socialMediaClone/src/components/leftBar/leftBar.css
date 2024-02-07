@@ -1,0 +1,52 @@
+
+.sLeftBar{
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    &::-webkit-scrollbar{display: none;}
+}
+.sLeftBar .container{
+    padding: 20px;
+}
+.sLeftBar hr{
+    margin: 20px 0;
+    border: none;
+    height: 0.5px;
+    background-color: lightgray;
+}
+.sLeftBar .container .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.menu > span{
+    font: 12px;
+}
+.sLeftBar .container .menu .userIcon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sLeftBar .container .menu .userIcon img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.userIcon > span{
+    font-size: 14px;
+}
+.sLeftBar .container .menu .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sLeftBar .container .menu .item img{
+    width: 30px;
+} 
+.sLeftBar .container .menu .item span{
+    font-size: 14px;
+}
