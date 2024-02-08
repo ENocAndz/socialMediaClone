@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+}
+
+.register {
+    height: 100vh;
+    background-color: rgb(151, 194, 149);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        display: flex;
+        background-color: white;
+        width: 50%;
+        border-radius: 10px;
+        min-height: 600px;
+        overflow: hidden;
+
+        .left {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            justify-content: center;
+
+            h1 {
+                color: #555;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid lightgray;
+                    padding: 20px 10px;
+                }
+
+                button {
+                    width: 50%;
+                    padding: 10px;
+                    cursor: pointer;
+                    color: white;
+                    border: none;
+                    font-weight: bold;
+                    background-color: #8FAC8F;
+                }
+            }
+        }
+
+        .right {
+            flex: 1;
+            background: linear-gradient(rgba(119, 143, 119, 0.5), rgba(119, 143, 119, 0.5)), url("https://images.pexels.com/photos/5081919/pexels-photo-5081919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+            background-size: cover;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            color: white;
+
+            h1 {
+                font-size: 100px;
+                line-height: 100px;
+                color: white;
+            }
+
+            span {
+                font-size: 14px;
+            }
+
+            button {
+                width: 50%;
+                padding: 10px;
+                border: none;
+                font-weight: bold;
+                cursor: pointer;
+                color: green;
+                background-color: white;
+            }
+        }
+    }
+}

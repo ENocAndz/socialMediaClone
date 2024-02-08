@@ -1,4 +1,4 @@
-import "./navBar.css"
+import "./navBar.scss"
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
@@ -12,7 +12,7 @@ import {Link} from "react-router-dom";
 const NavBar = () => {
   return (
     <div className="navBar">
-        <div className="leftBar">
+        <div className="NleftBar">
           <Link to="/" style={{textDecoration:"none"}}>
             <span>SocialMedia</span>
           </Link>
@@ -26,7 +26,7 @@ const NavBar = () => {
           </div>
           
         </div>
-        <div className="rightBar">
+        <div className="NrightBar">
           <Person2OutlinedIcon/>
           <EmailOutlinedIcon/>
           <NotificationsNoneOutlinedIcon/>
