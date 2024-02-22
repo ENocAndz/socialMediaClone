@@ -11,15 +11,18 @@ import Videos from "../../assets/9.png"
 import Messages from "../../assets/10.png"
 import Fund from "../../assets/11.png"
 import Tutorial from "../../assets/12.png"
+import { useContext } from "react"
+import { AuthContext } from "../../context/authContext"
 
 const LeftBar = () => {
+  const {currentUser } = useContext(AuthContext)
   return (
     <div className="sLeftBar">
         <div className="container">
           <div className="menu">
             <div className="userIcon">
-              <img src="https://images.pexels.com/photos/17371711/pexels-photo-17371711/free-photo-of-pretty-girl-with-a-yellow-flower-between-her-fingers-as-a-ring.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="girl" />
-              <span>Jane Doe</span>
+              <img src={currentUser.profilePic} />
+              <span>{currentUser.name}</span>
             </div>
             <div className="item">
               <img src={Friends} alt="friends" />

@@ -8,8 +8,13 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import {Link} from "react-router-dom";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 const NavBar = () => {
+  const {toggle,darkMode} = useContext(DarkModeContext)
+  const {currentUser } = useContext(AuthContext)
   return (
     <div className="navBar">
         <div className="NleftBar">
@@ -17,7 +22,10 @@ const NavBar = () => {
             <span>SocialMedia</span>
           </Link>
             <HomeOutlinedIcon/>
-            <DarkModeOutlinedIcon/>
+            {darkMode ? ( <WbSunnyOutlinedIcon onClick={toggle}/>)
+            :(
+              <DarkModeOutlinedIcon onClick={toggle}/>
+            )}
             <GridViewOutlinedIcon/>
           
           <div className="search">
@@ -31,8 +39,8 @@ const NavBar = () => {
           <EmailOutlinedIcon/>
           <NotificationsNoneOutlinedIcon/>
           <div className="userIcon">
-            <img src="https://images.pexels.com/photos/17371711/pexels-photo-17371711/free-photo-of-pretty-girl-with-a-yellow-flower-between-her-fingers-as-a-ring.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="girl" />
-            <span>Jane Doe</span>
+            <img src={currentUser.profilePic} alt="girl" />
+            <span>{currentUser.name}</span>
           </div>
         </div>
 
