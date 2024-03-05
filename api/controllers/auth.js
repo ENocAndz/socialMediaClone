@@ -1,5 +1,8 @@
 import { db } from "../connect.js";
 import bcrypt from "bcryptjs";
+import  Jwt  from "jsonwebtoken";
+import cookie from "cookie-parser";
+
 
 export const register = (req,res)=>{
     //Check user if exits
@@ -14,7 +17,7 @@ export const register = (req,res)=>{
 
         //insert into users table
 
-        const q = "ISNERT INTO users (`username`,`email`,`password`,`name`) VALUE (?)"
+        const q = "INSERT INTO users (`username`,`email`,`password`,`name`) VALUE (?)"
 
         const values = [req.body.username, req.body.email, hashedPassword, req.body.name];
 
@@ -24,8 +27,32 @@ export const register = (req,res)=>{
     })
 }
 export const login = (req,res)=>{
-    
-}
-export const logout = (req,res)=>{
+    const q = "SELECT * FROM users WHERE userName = ?";
+    db.query(q,[req.body.username], (err,data)=>{
+        if (err) return res.status(500).json(err);
+        if (data.length === 0) return res.status(404).json("User not found!");
 
-}
+        const checkPassword = bcrypt.compareSync(
+            req.body.password, 
+            data[0].password
+        );
+
+        if (!checkPassword) 
+            return res.status(400).json("Wrong password or username!");
+
+        const token = Jwt.sign({id:data[0].id}, "secretKey");
+
+        const {password, ...others} = data[0];
+
+        res.cookie("accessToken",token, {
+            httpOnly:true,
+        }).status(200).json(others);
+
+    });
+};
+export const logout = (req,res)=>{
+    res.clearCookie("accessToken", {
+        secure:true,
+        sameSite:"none"
+    }).status(200).json("User has been logged out.")
+};

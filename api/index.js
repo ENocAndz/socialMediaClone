@@ -4,10 +4,14 @@ import commentRoutes from "./routes/comments.js";
 import likeRoutes from "./routes/likes.js";
 import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 const app = Express()
 
 //middlewares
 app.use(Express.json())
+app.use(cors())
+app.use(cookieParser())
 
 app.use("/api/auth",authRoutes)
 app.use("/api/comments",commentRoutes)
