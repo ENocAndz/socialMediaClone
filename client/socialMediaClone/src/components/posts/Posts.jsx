@@ -6,9 +6,6 @@ import { makeRequest } from '../../axios';
 
 
 const Posts = () => {
-  
-
-  
   const { isPending, error, data } = useQuery({
     queryKey: ['posts'],
     queryFn: () =>
