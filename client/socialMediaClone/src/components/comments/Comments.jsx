@@ -1,55 +1,52 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import "./comments.scss"
 import { AuthContext } from '../../context/authContext';
+import { makeRequest } from '../../axios';
+import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
+import moment from 'moment';
 
-const Comments = () => {
+
+const Comments = ({postId}) => {
     const {currentUser} = useContext(AuthContext)
-    //temporary
-    const comments = [
-        {
-            id:1,
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-            name:"John Doe",
-            userId:1,
-            profilePic:"https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          },    
-          {
-            id:2,
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-            name:"John Doe",
-            userId:1,
-            profilePic:"https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          },    
-          {
-            id:3,
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-            name:"John Doe",
-            userId:1,
-            profilePic:"https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          },    
-          {
-            id:4,
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-            name:"John Doe",
-            userId:1,
-            profilePic:"https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          },      
-    ];
+     const [description, setDescription] = useState("")
+    const { isPending, error, data } = useQuery({
+      queryKey: ["comments"],
+      queryFn: () =>
+        makeRequest.get("/comments?postId=" + postId).then((res)=>{
+          return res.data
+        })
+    })
+
+    const mutation = useMutation({
+      mutationFn: (newComment)=>{
+      return makeRequest.post("/comments", newComment);
+      },
+      onSuccess: () => {
+          queryClient.invalidateQueries(["comments"])
+      }
+    })
+    const handleClick = async (e) =>{
+      e.preventDefault()
+      mutation.mutate({description, postId})
+      setDescription("")
+  
+    }
+    
   return (
     <div className='comments'>
         <div className="write">
             <img src={currentUser.profilePic} alt="" />
-            <input type="text" placeholder='Write a comment' />
-            <button>Send</button>
+            <input type="text" placeholder='Write a comment'  value={description} onChange={e=>setDescription(e.target.value)}/>
+            <button onClick={handleClick} >Send</button>
         </div>
-        {comments.map(comment=>(
+        { isPending ? "Loading" : data.map((comment)=>(
             <div className="comment">
                 <img src={comment.profilePic} alt="" />
                 <div className="info">
                     <span>{comment.name}</span>
-                    <p>{comment.desc}</p>
+                    <p>{comment.description}</p>
                 </div>
-                <span className='date'>min ago</span>
+                <span className='date'> {moment(comment.createdAt).fromNow()}</span>
             </div>
         ))}
     </div>
