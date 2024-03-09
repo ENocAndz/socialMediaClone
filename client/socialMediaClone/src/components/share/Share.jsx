@@ -12,6 +12,17 @@ import { makeRequest } from '../../axios';
 const Share = () => {
   const [file,setFile] = useState(null)
   const [description,setDescription] = useState(null)
+
+  const upload = async () =>{
+    try{
+        const formData = new FormData();
+        formData.append("file", file)
+        const res = await makeRequest.post("/upload", formData);
+        return res.data
+    } catch(err){
+        console.log(err);
+    }
+  }
     
   const {currentUser} = useContext(AuthContext)
     
@@ -25,17 +36,28 @@ const Share = () => {
         queryClient.invalidateQueries("posts")
     }
   })
-  const handleClick = e =>{
+  const handleClick = async (e) =>{
     e.preventDefault()
-    mutation.mutate({description})
+    let imgUrl = "";
+    if (file) imgUrl = await upload();
+    mutation.mutate({description, img: imgUrl})
+    setDescription("")
+    setFile(null)
+
   }
   return (
     <div className="share">
         <div className="container">
             <div className="top">
+                <div className="left">
                     <img src={currentUser.profilePic} alt="" />
-                    <input type="text" placeholder={`what's on your mind ${currentUser.name}?`} onChange={e=>setDescription(e.target.value)}/>
+                    <input type="text" placeholder={`what's on your mind ${currentUser.name}?`} onChange={e=>setDescription(e.target.value)} value={description}/>
+                </div>
+                <div className="right">
+                    {file && <img className='file' src={URL.createObjectURL(file)}/>}
+                </div>
             </div>
+                    <hr />
                 <div className="bottom">
                     <div className="left">
                         <input type="file"  id="file" style={{display:"none"}} onChange={e=>setFile(e.target.files[0])} />

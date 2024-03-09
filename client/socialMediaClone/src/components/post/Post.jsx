@@ -7,6 +7,7 @@ import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import MoreHorizonIcon from '@mui/icons-material/MoreHorizOutlined';
 import { Link } from 'react-router-dom';
 import Comments from '../comments/Comments';
+import moment from "moment";
 
 const Post = ({post}) => {
 
@@ -23,14 +24,14 @@ const Post = ({post}) => {
                         <Link to={`/profile/${post.userId}`} style={{textDecoration:"none", color:"inherit"}}>
                             <span className='name'>{post.name}</span>
                         </Link>
-                        <span className="date">1 min ago</span>
+                        <span className="date">{moment(post.createdAt).fromNow()}</span>
                     </div>
                 </div>
                 <MoreHorizonIcon/>
             </div>    
             <div className="content">
                 <p>{post.description}</p>
-                <img src={post.img} alt="" />
+                <img src={"./upload/" + post.img} alt="" />
             </div>
             <div className="info">
                 <div className="item">

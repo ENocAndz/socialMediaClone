@@ -16,24 +16,18 @@
                 align-items: center;
                 justify-content: space-between;
                 
-                img{
-                    height: 40px;
-                    border-radius: 50%;
-                }
-            }
-            .bottom{
                 .left{
                     display: flex;
                     align-items: center;
                     flex: 3;
-
+    
                     img{
                         width: 40px;
                         height: 40px;
                         border-radius:50%;
                         object-fit: cover;
                     }
-
+    
                     input{
                         border: none;outline: none;
                         padding: 20px 10px;
@@ -42,12 +36,12 @@
                         color: themed("textColor");
                     }
                 }
-
+    
                 .right{
                     flex: 1;
                     display: flex;
                     justify-content: flex-end;
-
+    
                     .file{
                         width: 100px;
                         height: 100px;
@@ -55,13 +49,17 @@
                         border-radius: 0px;
                     }
                 }
+            }
 
-            // hr{
-            //     margin: 20px 0px;
-            //     border: none;
-            //     height: 0.5px;
-            //     background-color: themed("border");
-            // }
+            hr{
+                margin: 20px 0px;
+                border: none;
+                height: 0.5px;
+                background-color: themed("border");
+            }
+            .bottom{
+
+                
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
