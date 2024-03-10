@@ -4,7 +4,6 @@ import { db } from "../connect.js";
 
 
 export const getLikes = (req,res)=>{
-    console.log("works");
 
     const q = "SELECT userId FROM likes WHERE postId = ?";
     
