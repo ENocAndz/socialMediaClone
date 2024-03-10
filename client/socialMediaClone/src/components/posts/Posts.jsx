@@ -14,7 +14,6 @@ const Posts = () => {
       })
   })
   
-  console.log(data);
   return (
     <div className='posts' >
       {error? "Something went wrong!" : (isPending? "loading" :data.map(post=>(
