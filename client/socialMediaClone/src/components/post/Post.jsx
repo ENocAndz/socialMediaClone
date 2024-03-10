@@ -21,7 +21,7 @@ const Post = ({post}) => {
     const { isPending, error, data } = useQuery({
         queryKey: ['likes',post.id],
         queryFn: () =>
-          makeRequest.get("/likes?postId="+ post.id).then((res)=>{
+            makeRequest.get("/likes?postId="+ post.id).then((res)=>{
             return res.data
           })
     })
@@ -41,6 +41,7 @@ const Post = ({post}) => {
     const handleLike = () =>{
         mutation.mutate(data.includes(currentUser.id))
     }
+    
 
   return (
     <div className='post'>
@@ -67,9 +68,10 @@ const Post = ({post}) => {
                     {isPending ?"Loading" : data.includes(currentUser.id) ? (
                     <FavoriteOutlinedIcon style={{color:"rgb(151, 194, 149)"}} onClick={handleLike}/>
                     ) :(
-                         <FavoriteBorderOutlinedIcon onClick={handleLike}/>
-                    )}
-                    {data.length} likes
+                        <FavoriteBorderOutlinedIcon onClick={handleLike}/>
+                    )
+                    }
+                    { isPending? "Loading" :data.length} likes
                 </div>
                 <div className="item" onClick={()=> setCommentOpen(!commentOpen)}>
                    <TextsmsOutlinedIcon/>

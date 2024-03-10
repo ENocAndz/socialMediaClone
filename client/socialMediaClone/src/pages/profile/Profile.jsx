@@ -8,16 +8,36 @@ import PlaceIcon from '@mui/icons-material/Place';
 import LanguageIcon from '@mui/icons-material/Language';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Posts from "../../components/posts/Posts"
+import { useLocation } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { makeRequest } from "../../axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
-import Posts from "../../components/posts/Posts"
+
+
+
 const Profile = () => {
-  const {currentUser } = useContext(AuthContext)
+  
+  const {currentUser} = useContext(AuthContext);
+  const userId = parseInt(useLocation().pathname.split("/")[2])
+
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ['user'],
+    queryFn: () =>
+      makeRequest.get("/users/find/" + userId).then((res)=>{
+        return res.data;
+      })
+  });
+  console.log(data)
+
   return (
     <div className="profile">
-      <div className="images">
-        <img src="https://images.pexels.com/photos/133633/pexels-photo-133633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="cover" />
-        <img src={currentUser.profilePic} alt="" className="profilePic" />
+      {isPending ? "Loading" :<>
+      <div className="images">{}
+        <img src={data.coverPic} alt="" className="cover" />
+        <img src={data.profilePic} alt="" className="profilePic" />
       </div>
       <div className="profileContainer">
         <div className="uInfo">
@@ -29,18 +49,18 @@ const Profile = () => {
             <a href="http://Pinterest.com"><PinterestIcon fontSize="large"/></a>
           </div>
           <div className="center">
-            <span>{currentUser.name}</span>
+            <span>{data.name}</span>
             <div className="info">
               <div className="item">
                 <PlaceIcon/>
-                <span>USA</span>
+                <span>{data.city}</span>
               </div>
               <div className="item">
                 <LanguageIcon/>
-                <span>SMC</span>
+                <span>{data.website}</span>
               </div>
             </div>
-            <button>Follow</button>
+            {userId === currentUser.id? (<button>Update</button>):(<button>Follow</button>)}
           </div>
           <div className="right">
             <EmailOutlinedIcon/>
@@ -49,6 +69,7 @@ const Profile = () => {
         </div>
         <Posts/>
       </div>
+      </> }
     </div>
   )
 }
