@@ -9,7 +9,7 @@ export const getPosts = (req,res)=>{
 
     Jwt.verify(token, "secretKey", (err, userInfo)=>{
         if (err) return res.status(403).json("Token is not valid!");
-        const q = userId !=="undefined" ? 'SELECT p.*, u.id as userId, name, profilePic FROM posts as p JOIN users as u ON  (u.id = p.userId) WHERE p.userId = ?'  : 'SELECT p.*, u.id as userId, name, profilePic FROM posts as p JOIN users as u ON  (u.id = p.userId) LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) WHERE r.followerUserId = ? OR p.userId = ? ORDER BY p.createdAt DESC';
+        const q = userId !=="undefined" ? 'SELECT p.*, u.id as userId, name, profilePic FROM posts as p JOIN users as u ON  (u.id = p.userId) WHERE p.userId = ? '  : 'SELECT p.*, u.id as userId, name, profilePic FROM posts as p JOIN users as u ON  (u.id = p.userId) LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) WHERE r.followerUserId = ? OR p.userId = ? ORDER BY p.createdAt DESC';
          
         db.query(q,[userId !== "undefined" ? userId : userInfo.id,userInfo.id], (err,data)=>{
             if (err) return res.status(500).json(err);
@@ -20,7 +20,7 @@ export const getPosts = (req,res)=>{
 
 export const addPost = (req,res) =>{
     const token = req.cookies.accessToken;
-    if(!token) return res.status(401).json("Not looged in in!");
+    if(!token) return res.status(401).json("Not logged in!");
 
     Jwt.verify(token,"secretKey", (err, userInfo) =>{
         if (err) return res.status(403).json("Token is not valid");
@@ -38,8 +38,23 @@ export const addPost = (req,res) =>{
             if (err) return res.status(500).json(err);
             return res.status(200).json("Post has been created");
         });
-
-
-
     });
 };
+
+export const deletePost = (req, res) =>{
+    const token = req.cookies. accessToken;
+    if(!token) return res.status(401).json("Not logged In!");
+
+    Jwt.verify(token, "secretKey", (err,userInfo)=>{
+        if(err) return res.status(403).json("Token is not valid!");
+
+        const q = "DELETE FROM posts WHERE `id`=? AND `userId`=?";
+
+        db.query(q,[req.params.id, userInfo.id], (err,data)=>{
+            if (err) return res.status(500).json(err);
+            if(data.affectedRows > 0) return res.status(200).json("Post has been deleted.");
+            return res.status(403).json("You can only delete your posts");
+        })
+    })
+    
+}
