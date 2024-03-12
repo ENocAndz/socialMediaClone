@@ -12,6 +12,15 @@ export const getComments = (req,res) =>{
     });
 };
 
+export const ammountComments = (req, res) => {
+    const q = 'SELECT COUNT(*) AS commentCount FROM comments WHERE postId = ?'; // Changed to count the number of comments
+    db.query(q, [req.query.postId], (err, data) => {
+        if (err) return res.status(500).json(err);
+        const commentCount = data[0].commentCount; // Access the count from the first row of the result
+        return res.status(200).json({ commentCount });
+    });
+};
+
 export const addComment = (req, res) => {
     const token = req.cookies.accessToken;
     if(!token) return res.status(401).json("Not logged in");

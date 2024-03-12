@@ -21,7 +21,9 @@ const NavBar = () => {
           <Link to="/" style={{textDecoration:"none"}}>
             <span>SocialMedia</span>
           </Link>
-            <HomeOutlinedIcon/>
+          <Link to="/" style={{textDecoration:"none", color:"inherit", height:"100%", display:"flex"} }>
+            <HomeOutlinedIcon />
+          </Link>
             {darkMode ? ( <WbSunnyOutlinedIcon onClick={toggle}/>)
             :(
               <DarkModeOutlinedIcon onClick={toggle}/>
@@ -39,8 +41,10 @@ const NavBar = () => {
           <EmailOutlinedIcon/>
           <NotificationsNoneOutlinedIcon/>
           <div className="userIcon">
-            <img src={currentUser.profilePic} alt="girl" />
-            <span>{currentUser.name}</span>
+            <img src={"/upload/"+ currentUser.profilePic} alt="girl" />
+            <Link to={`/profile/${currentUser.id}`} style={{textDecoration:"none", color:"inherit"}}>
+              <span className='name'>{currentUser.name}</span>
+            </Link>
           </div>
         </div>
 

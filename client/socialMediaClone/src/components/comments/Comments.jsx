@@ -16,7 +16,7 @@ const Comments = ({postId}) => {
           return res.data
         })
     })
-
+    const queryClient = useQueryClient();
     const mutation = useMutation({
       mutationFn: (newComment)=>{
       return makeRequest.post("/comments", newComment);

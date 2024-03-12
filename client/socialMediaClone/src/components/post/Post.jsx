@@ -26,6 +26,14 @@ const Post = ({post}) => {
             return res.data
           })
     })
+    const { isPending:commentsPending, error:cmntsError, data:commentsData } = useQuery({
+        queryKey: ["ammount",post.id], 
+        queryFn: () =>
+          makeRequest.get("/comments/ammount?postId=" + post.id).then((res)=>{
+            return res.data 
+          })
+    })
+    
 
     const queryClient = useQueryClient();
     const mutation = useMutation({
@@ -90,7 +98,7 @@ const Post = ({post}) => {
                 </div>
                 <div className="item" onClick={()=> setCommentOpen(!commentOpen)}>
                    <TextsmsOutlinedIcon/>
-                    12 comments
+                   { commentsPending? "Loading" :commentsData.commentCount} comments
                 </div>
                 <div className="item">
                    <ShareOutlinedIcon/>
