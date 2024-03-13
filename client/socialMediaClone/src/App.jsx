@@ -5,6 +5,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile"
+import Friends from "./pages/friends/Friend"
 import "./style.scss"
 import {
   createBrowserRouter,
@@ -62,6 +63,10 @@ function App() {
         {
           path:"/profile/:id",
           element:<Profile/>
+        },
+        {
+          path:"/friends/:id",
+          element:<Friends/>
         }
       ]
     },

@@ -1,0 +1,34 @@
+@import "../../style.scss";
+
+.container{
+    @include themify($themes){
+        background-color: themed("bg");
+        height: 100vh;
+        color: themed("textColor");
+        
+        .content{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            
+            .top{
+                display: flex;
+                align-items: center;
+        
+                flex-direction: row;
+                height: 10vh;
+            
+    
+                .buttons{
+                    margin-right: 10px;
+                    margin-left: 10px;
+                    width: fit-content;
+                    padding: 10px;
+                    border-radius: 50px;
+                    background-color: themed("bgSoft");
+                }
+            }
+
+        }
+    }
+}
