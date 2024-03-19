@@ -6,10 +6,14 @@
         height: 100vh;
         color: themed("textColor");
         
+        
         .content{
             display: flex;
             justify-content: space-between;
             flex-direction: column;
+            h1{
+                margin-top: 10px;
+            }
             
             .top{
                 display: flex;
@@ -26,6 +30,34 @@
                     padding: 10px;
                     border-radius: 50px;
                     background-color: themed("bgSoft");
+                }
+                .buttons:hover{
+                    background-color: gray;
+                    transform: scale(1.05);
+                }
+                
+            }
+
+            .body{
+                .user {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 20px 0;
+    
+                    .userInfo {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        gap: 20px;
+    
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
                 }
             }
 
