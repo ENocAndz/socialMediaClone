@@ -50,7 +50,7 @@ const Share = () => {
         <div className="container">
             <div className="top">
                 <div className="left">
-                    <img src={currentUser.profilePic} alt="" />
+                    <img src={"/upload/" + currentUser.profilePic} alt="" />
                     <input type="text" placeholder={`what's on your mind ${currentUser.name}?`} onChange={e=>setDescription(e.target.value)} value={description}/>
                 </div>
                 <div className="right">

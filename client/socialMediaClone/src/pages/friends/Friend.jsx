@@ -9,12 +9,11 @@ import { makeRequest } from '../../axios';
 const Friend = () => {
   const {currentUser} = useContext(AuthContext);
   const userId = parseInt(useLocation().pathname.split("/")[2])
-  console.log(userId)
 
   const {isPending, error, data} =  useQuery({
     queryKey: ['friend'],
     queryFn: () =>
-      makeRequest.get("/users/find/" + userId).then((res)=>{
+      makeRequest.get("/friends/find/" + userId).then((res)=>{
         return res.data;
       })
   });

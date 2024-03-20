@@ -21,12 +21,12 @@ const NavBar = () => {
           <Link to="/" style={{textDecoration:"none"}}>
             <span>SocialMedia</span>
           </Link>
-          <Link to="/" style={{textDecoration:"none", color:"inherit", height:"100%", display:"flex"} }>
+          <Link to="/" style={{textDecoration:"none", color:"inherit", height:"100%", display:"flex",} }>
             <HomeOutlinedIcon />
           </Link>
-            {darkMode ? ( <WbSunnyOutlinedIcon onClick={toggle}/>)
+            {darkMode ? ( <WbSunnyOutlinedIcon onClick={toggle}  style={{cursor:"pointer"}}/>)
             :(
-              <DarkModeOutlinedIcon onClick={toggle}/>
+              <DarkModeOutlinedIcon onClick={toggle} style={{cursor:"pointer"}}/>
             )}
             <GridViewOutlinedIcon/>
           
