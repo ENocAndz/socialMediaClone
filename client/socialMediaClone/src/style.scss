@@ -6,6 +6,7 @@ $themes: (
         bgSoft: #f6f3f3,
         textColorSoft:#555,
         border:#000,
+        messageColor:lightgray,
     ),
     dark: (
         textColor:whiteSmoke,
@@ -14,6 +15,7 @@ $themes: (
         bgSoft: #333,
         textColorSoft:lightgray,
         border:#444,
+        messageColor:#434242,
     )
 ); 
 

@@ -1,0 +1,120 @@
+.theme-light .sLeftBar {
+  flex: 2;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow: scroll;
+  background-color: white;
+  color: #000;
+}
+@media (max-width: 480px) {
+  .theme-light .sLeftBar {
+    display: none;
+  }
+}
+.theme-light .sLeftBar::-webkit-scrollbar {
+  display: none;
+}
+.theme-light .sLeftBar .container {
+  padding: 20px;
+}
+.theme-light .sLeftBar .container hr {
+  margin: 20px 0;
+  border: none;
+  height: 0.5px;
+  background-color: #000;
+}
+.theme-light .sLeftBar .container .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.theme-light .sLeftBar .container .menu > span {
+  font-size: 12px;
+}
+.theme-light .sLeftBar .container .menu .userIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-light .sLeftBar .container .menu .userIcon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-light .sLeftBar .container .menu .userIcon > span {
+  font-size: 14px;
+}
+.theme-light .sLeftBar .container .menu .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-light .sLeftBar .container .menu .item img {
+  width: 30px;
+}
+.theme-light .sLeftBar .container .menu .item span {
+  font-size: 14px;
+}
+.theme-dark .sLeftBar {
+  flex: 2;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow: scroll;
+  background-color: #222;
+  color: whiteSmoke;
+}
+@media (max-width: 480px) {
+  .theme-dark .sLeftBar {
+    display: none;
+  }
+}
+.theme-dark .sLeftBar::-webkit-scrollbar {
+  display: none;
+}
+.theme-dark .sLeftBar .container {
+  padding: 20px;
+}
+.theme-dark .sLeftBar .container hr {
+  margin: 20px 0;
+  border: none;
+  height: 0.5px;
+  background-color: #444;
+}
+.theme-dark .sLeftBar .container .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.theme-dark .sLeftBar .container .menu > span {
+  font-size: 12px;
+}
+.theme-dark .sLeftBar .container .menu .userIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-dark .sLeftBar .container .menu .userIcon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-dark .sLeftBar .container .menu .userIcon > span {
+  font-size: 14px;
+}
+.theme-dark .sLeftBar .container .menu .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-dark .sLeftBar .container .menu .item img {
+  width: 30px;
+}
+.theme-dark .sLeftBar .container .menu .item span {
+  font-size: 14px;
+}/*# sourceMappingURL=leftBar.css.map */

@@ -6,7 +6,7 @@ import cookie from "cookie-parser";
 
 export const register = (req,res)=>{
     //Check user if exits
-    const q = "SELECT *  FROM users WHERE username = ?"
+    const q = "SELECT *  FROM users WHERE userName = ?"
     db.query(q,[req.body.username], (err,data)=>{
         if (err) return res.status(500).json(err)
         if (data.length) return res.status(409).json("User already exists!")
@@ -38,7 +38,7 @@ export const login = (req,res)=>{
         );
 
         if (!checkPassword) 
-            return res.status(400).json("Wrong password or username!");
+            return res.status(401).json("Wrong password or username!");
 
         const token = Jwt.sign({id:data[0].id}, "secretKey");
 

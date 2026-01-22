@@ -1,0 +1,86 @@
+@import "../../style.scss";
+.chats{
+    @include themify($themes){
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        width: 23%;
+        height: 40em;
+        background-color: themed("bgSoft");
+        
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        
+        z-index: 1000;
+
+        .chatsBar{
+            width: 100%;
+            padding-top: 10px;
+            padding-left: 15px;
+            height: 2em;
+            h1{
+                font-size:x-large;
+            }
+        }
+        .chat-item:hover {
+            background-color: themed("bg"); 
+        }
+
+        .chat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .chat-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #ccc;
+                flex-shrink: 0;
+            }
+              
+            .chat-details {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+              
+              .chat-details .chat-name {
+                font-size: 14px;
+                font-weight: bold;
+                margin: 0;
+              }
+              
+              .chatLine{
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+
+                .date{
+                    margin-left: 1em;
+                    color: themed("textColorSoft");
+                    font-size: 14px;
+                }
+                .chat-details .chat-preview {
+                    font-size: 12px;
+                    color: themed("textColor");
+                    margin: 0;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }    
+              }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+.update {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.update form {
+  width: 40%;
+  height: 80%;
+  background-color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+  position: relative;
+  border-radius: 10px;
+}
+.theme-dark .update form {
+  background-color: #333;
+  color: lightgray;
+}
+.theme-light .update form {
+  background-color: white;
+  color: #555;
+}
+.update form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+.update form label span {
+  font-weight: 500;
+}
+.update form input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  background-color: transparent;
+  outline: none;
+}
+.theme-dark .update form input {
+  color: white;
+  border-bottom: 1px solid #555;
+}
+.update form button {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #5271ff;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.update form .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  border: none;
+  background-color: #f0544f;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}/*# sourceMappingURL=update.css.map */

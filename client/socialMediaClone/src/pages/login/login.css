@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+.login {
+  height: 100vh;
+  background-color: rgb(151, 194, 149);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login .card {
+  display: flex;
+  background-color: white;
+  width: 50%;
+  border-radius: 10px;
+  min-height: 600px;
+  overflow: hidden;
+}
+.login .card .left {
+  flex: 1;
+  background: linear-gradient(rgba(119, 143, 119, 0.5), rgba(119, 143, 119, 0.5)), url("https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+  background-size: cover;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: white;
+}
+.login .card .left h1 {
+  font-size: 100px;
+  line-height: 100px;
+  margin: 0;
+}
+.login .card .left span {
+  font-size: 14px;
+}
+.login .card .left button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
+.login .card .right {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  background-color: white;
+}
+.login .card .right h1 {
+  color: #555;
+}
+.login .card .right .loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.login .card .right .loginForm input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 10px;
+}
+.login .card .right .loginForm button {
+  width: 50%;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background-color: #8FAC8F;
+}/*# sourceMappingURL=login.css.map */

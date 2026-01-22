@@ -1,0 +1,148 @@
+.theme-light .chats {
+  position: absolute;
+  top: 75px;
+  right: 20px;
+  width: 23%;
+  height: 40em;
+  background-color: #f6f3f3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
+.theme-light .chats .chatsBar {
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 15px;
+  height: 2em;
+}
+.theme-light .chats .chatsBar h1 {
+  font-size: x-large;
+}
+.theme-light .chats .chat-item:hover {
+  background-color: white;
+}
+.theme-light .chats .chat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.theme-light .chats .chat-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-light .chats .chat-item .chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  flex-shrink: 0;
+}
+.theme-light .chats .chat-item .chat-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.theme-light .chats .chat-item .chat-details .chat-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+.theme-light .chats .chat-item .chatLine {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.theme-light .chats .chat-item .chatLine .date {
+  margin-left: 1em;
+  color: #555;
+  font-size: 14px;
+}
+.theme-light .chats .chat-item .chatLine .chat-details .chat-preview {
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.theme-dark .chats {
+  position: absolute;
+  top: 75px;
+  right: 20px;
+  width: 23%;
+  height: 40em;
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
+.theme-dark .chats .chatsBar {
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 15px;
+  height: 2em;
+}
+.theme-dark .chats .chatsBar h1 {
+  font-size: x-large;
+}
+.theme-dark .chats .chat-item:hover {
+  background-color: #222;
+}
+.theme-dark .chats .chat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.theme-dark .chats .chat-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-dark .chats .chat-item .chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  flex-shrink: 0;
+}
+.theme-dark .chats .chat-item .chat-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.theme-dark .chats .chat-item .chat-details .chat-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+.theme-dark .chats .chat-item .chatLine {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.theme-dark .chats .chat-item .chatLine .date {
+  margin-left: 1em;
+  color: lightgray;
+  font-size: 14px;
+}
+.theme-dark .chats .chat-item .chatLine .chat-details .chat-preview {
+  font-size: 12px;
+  color: whiteSmoke;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}/*# sourceMappingURL=conversations.css.map */

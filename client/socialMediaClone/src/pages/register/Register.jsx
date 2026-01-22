@@ -7,7 +7,7 @@ const Register = () => {
     const [inputs, setInputs] = useState({
         username:"",
         email:"",
-        password:"",
+        password:"password",
         name:"",
     });
     const [err, setErr] = useState(null);

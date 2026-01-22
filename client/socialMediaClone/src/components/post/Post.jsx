@@ -26,6 +26,7 @@ const Post = ({post}) => {
             return res.data
           })
     })
+    
     const { isPending:commentsPending, error:cmntsError, data:commentsData } = useQuery({
         queryKey: ["ammount",post.id], 
         queryFn: () =>

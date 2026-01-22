@@ -35,13 +35,13 @@ const Comments = ({postId}) => {
   return (
     <div className='comments'>
         <div className="write">
-            <img src={currentUser.profilePic} alt="" />
+            <img src={"/upload/"+ currentUser.profilePic} />
             <input type="text" placeholder='Write a comment'  value={description} onChange={e=>setDescription(e.target.value)}/>
             <button onClick={handleClick} >Send</button>
         </div>
         { isPending ? "Loading" : data.map((comment)=>(
             <div className="comment">
-                <img src={comment.profilePic} alt="" />
+                <img src={"/upload/" + comment.profilePic} alt="" />
                 <div className="info">
                     <span>{comment.name}</span>
                     <p>{comment.description}</p>

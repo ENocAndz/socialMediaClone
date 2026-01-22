@@ -6,12 +6,14 @@ import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 import relationshipRoutes from "./routes/relationships.js";
 import friendRoutes from "./routes/friends.js";
+import conversationRoutes from "./routes/conversations.js";
+import chatRoutes from "./routes/chats.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import multer from "multer"
 const app = Express()
 
-//middlewares
+
 app.use((req,res,next)=>{
     res.header("Access-Control-Allow-Credentials",true);
     next();
@@ -46,6 +48,8 @@ app.use("/api/posts",postRoutes)
 app.use("/api/users",userRoutes)
 app.use("/api/relationships", relationshipRoutes)
 app.use("/api/friends", friendRoutes)
+app.use("/api/conversations", conversationRoutes)
+app.use("/api/chats", chatRoutes)
 
 app.listen(8800, ()=>{
     console.log("API Working")

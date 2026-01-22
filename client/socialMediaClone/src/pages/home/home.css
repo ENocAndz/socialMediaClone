@@ -1,0 +1,30 @@
+.theme-light .home {
+  background-color: #f6f3f3;
+  min-height: 100vh;
+  padding: 20px 70px;
+}
+@media (max-width: 480px) {
+  .theme-light .home {
+    padding: 10px;
+  }
+}
+@media (max-width: 960px) {
+  .theme-light .home {
+    padding: 20px;
+  }
+}
+.theme-dark .home {
+  background-color: #333;
+  min-height: 100vh;
+  padding: 20px 70px;
+}
+@media (max-width: 480px) {
+  .theme-dark .home {
+    padding: 10px;
+  }
+}
+@media (max-width: 960px) {
+  .theme-dark .home {
+    padding: 20px;
+  }
+}/*# sourceMappingURL=home.css.map */

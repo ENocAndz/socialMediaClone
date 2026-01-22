@@ -1,0 +1,2 @@
+to run client side execute npm run  dev on socialmediaclone in client
+to run api execute on other console npm start in api 

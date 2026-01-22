@@ -1,0 +1,244 @@
+.theme-light .chat-interface {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0px;
+  right: 40px;
+  width: 350px;
+  background-color: #f6f3f3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  height: 60%;
+}
+.theme-light .chat-interface .chat-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  gap: 10px;
+}
+.theme-light .chat-interface .chat-header img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-light .chat-interface .chat-header .back-button {
+  position: absolute;
+  right: 15px;
+  font-size: 15px;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.theme-light .chat-interface .chat-header .back-button:hover {
+  color: #0056b3;
+}
+.theme-light .chat-interface .chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f6f3f3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.theme-light .chat-interface .chat-messages .messageDiv {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.theme-light .chat-interface .chat-messages .messageDiv.sent {
+  justify-content: flex-end;
+}
+.theme-light .chat-interface .chat-messages .messageDiv.received {
+  justify-content: flex-start;
+}
+.theme-light .chat-interface .chat-messages .messageDiv .chatImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-light .chat-interface .chat-messages .messageDiv .chatImg.sent {
+  display: none;
+}
+.theme-light .chat-interface .chat-messages .messageDiv .chatImg.received {
+  display: block;
+}
+.theme-light .chat-interface .chat-messages .messageDiv .message {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.theme-light .chat-interface .chat-messages .messageDiv .message.sent {
+  background: linear-gradient(196deg, #6D2FFF, #007bff);
+  color: white;
+}
+.theme-light .chat-interface .chat-messages .messageDiv .message.received {
+  align-self: flex-start;
+  background-color: lightgray;
+  color: white;
+}
+.theme-light .chat-interface .chat-input {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #000;
+  padding: 10px;
+  background-color: #f6f3f3;
+}
+.theme-light .chat-interface .chat-input input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  margin-right: 10px;
+  transition: border-color 0.2s ease;
+}
+.theme-light .chat-interface .chat-input input:focus {
+  border-color: #007bff;
+}
+.theme-light .chat-interface .chat-input button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+.theme-light .chat-interface .chat-input button:hover {
+  background-color: #0056b3;
+}
+.theme-dark .chat-interface {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0px;
+  right: 40px;
+  width: 350px;
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  height: 60%;
+}
+.theme-dark .chat-interface .chat-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  gap: 10px;
+}
+.theme-dark .chat-interface .chat-header img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-dark .chat-interface .chat-header .back-button {
+  position: absolute;
+  right: 15px;
+  font-size: 15px;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.theme-dark .chat-interface .chat-header .back-button:hover {
+  color: #0056b3;
+}
+.theme-dark .chat-interface .chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv.sent {
+  justify-content: flex-end;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv.received {
+  justify-content: flex-start;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv .chatImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv .chatImg.sent {
+  display: none;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv .chatImg.received {
+  display: block;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv .message {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv .message.sent {
+  background: linear-gradient(196deg, #6D2FFF, #007bff);
+  color: white;
+}
+.theme-dark .chat-interface .chat-messages .messageDiv .message.received {
+  align-self: flex-start;
+  background-color: #434242;
+  color: white;
+}
+.theme-dark .chat-interface .chat-input {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #444;
+  padding: 10px;
+  background-color: #333;
+}
+.theme-dark .chat-interface .chat-input input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  margin-right: 10px;
+  transition: border-color 0.2s ease;
+}
+.theme-dark .chat-interface .chat-input input:focus {
+  border-color: #007bff;
+}
+.theme-dark .chat-interface .chat-input button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+.theme-dark .chat-interface .chat-input button:hover {
+  background-color: #0056b3;
+}/*# sourceMappingURL=chat.css.map */

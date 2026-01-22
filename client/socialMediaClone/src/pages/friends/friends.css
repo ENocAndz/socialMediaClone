@@ -1,0 +1,102 @@
+.theme-light .container {
+  background-color: white;
+  height: 100vh;
+  color: #000;
+}
+.theme-light .container .content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.theme-light .container .content h1 {
+  margin-top: 10px;
+}
+.theme-light .container .content .top {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 10vh;
+}
+.theme-light .container .content .top .buttons {
+  margin-right: 10px;
+  margin-left: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #f6f3f3;
+}
+.theme-light .container .content .top .buttons:hover {
+  background-color: gray;
+  transform: scale(1.05);
+}
+.theme-light .container .content .body .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.theme-light .container .content .body .user .userInfo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
+.theme-light .container .content .body .user .userInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-dark .container {
+  background-color: #222;
+  height: 100vh;
+  color: whiteSmoke;
+}
+.theme-dark .container .content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.theme-dark .container .content h1 {
+  margin-top: 10px;
+}
+.theme-dark .container .content .top {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 10vh;
+}
+.theme-dark .container .content .top .buttons {
+  margin-right: 10px;
+  margin-left: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #333;
+}
+.theme-dark .container .content .top .buttons:hover {
+  background-color: gray;
+  transform: scale(1.05);
+}
+.theme-dark .container .content .body .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.theme-dark .container .content .body .user .userInfo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
+.theme-dark .container .content .body .user .userInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=friends.css.map */

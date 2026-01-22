@@ -20,11 +20,14 @@ const Login = () => {
 
     const handleLogin = async (e) =>{
         e.preventDefault()
+        setErr(null); // Clear previous errors
         try{
             await login(inputs)
             navigate("/")
         }catch(err){
-            setErr(err.response.data)
+            // Change this line:
+            // err.response.data contains the string "Wrong password or username!"
+            setErr(err.response?.data || "An unexpected error occurred");
         }
     };
   return (
@@ -41,10 +44,10 @@ const Login = () => {
             </div>
             <div className="right">
                 <h1>Login</h1>
-                <form className="loginForm" action="">
+                <form className="loginForm">
                     <input type="text" placeholder="Username" name="username" onChange={handleChange} />
                     <input type="password" placeholder="Password" name="password" onChange={handleChange} />
-                    
+                    {err && <span style={{ color: "red", marginTop: "10px" }}>{err}</span>}
                     <button onClick={handleLogin}>Login</button>
                 </form>
             </div>

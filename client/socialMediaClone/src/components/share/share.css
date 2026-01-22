@@ -1,0 +1,172 @@
+.theme-light .share {
+  box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+  border-radius: 20px;
+  background-color: white;
+  color: #000;
+  margin-bottom: 20px;
+}
+.theme-light .share .container {
+  padding: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.theme-light .share .container .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.theme-light .share .container .top .left {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+.theme-light .share .container .top .left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-light .share .container .top .left input {
+  border: none;
+  outline: none;
+  padding: 20px 10px;
+  background-color: transparent;
+  width: 60%;
+  color: #000;
+}
+.theme-light .share .container .top .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.theme-light .share .container .top .right .file {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0px;
+}
+.theme-light .share .container hr {
+  margin: 20px 0px;
+  border: none;
+  height: 0.5px;
+  background-color: #000;
+}
+.theme-light .share .container .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.theme-light .share .container .bottom .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.theme-light .share .container .bottom .left .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.theme-light .share .container .bottom .left .item img {
+  height: 20px;
+}
+.theme-light .share .container .bottom .left .item span {
+  font-size: 12px;
+  color: gray;
+}
+.theme-light .share .container .bottom .right button {
+  border: none;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  background-color: #5271ff;
+  border-radius: 3px;
+}
+.theme-dark .share {
+  box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+  border-radius: 20px;
+  background-color: #222;
+  color: whiteSmoke;
+  margin-bottom: 20px;
+}
+.theme-dark .share .container {
+  padding: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.theme-dark .share .container .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.theme-dark .share .container .top .left {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+.theme-dark .share .container .top .left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-dark .share .container .top .left input {
+  border: none;
+  outline: none;
+  padding: 20px 10px;
+  background-color: transparent;
+  width: 60%;
+  color: whiteSmoke;
+}
+.theme-dark .share .container .top .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.theme-dark .share .container .top .right .file {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0px;
+}
+.theme-dark .share .container hr {
+  margin: 20px 0px;
+  border: none;
+  height: 0.5px;
+  background-color: #444;
+}
+.theme-dark .share .container .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.theme-dark .share .container .bottom .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.theme-dark .share .container .bottom .left .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.theme-dark .share .container .bottom .left .item img {
+  height: 20px;
+}
+.theme-dark .share .container .bottom .left .item span {
+  font-size: 12px;
+  color: gray;
+}
+.theme-dark .share .container .bottom .right button {
+  border: none;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  background-color: #5271ff;
+  border-radius: 3px;
+}/*# sourceMappingURL=share.css.map */
